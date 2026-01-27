@@ -1,0 +1,31 @@
+.practice-card {
+    background-color: #ffffff;
+    border: 1px solid #e5e5e5;
+    border-radius: 6px;
+    padding: 2rem;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    color: inherit;
+    margin: 10px;
+    max-width: 300px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.practice-card:hover {
+    border-color: #2a2a2a;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+    transform: translateY(-5px);
+}
+
+.practice-title {
+    color: #e67e22;
+}
+
+#contenedor-personajes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
