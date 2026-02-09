@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Nuevo Producto</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<h2>Crear Nuevo Producto</h2>
+
+<form id="formulario">
+    <input type="text" id="titulo" placeholder="Título" required>
+    <input type="number" id="precio" placeholder="Precio" required>
+    <button type="submit">Guardar</button>
+</form>
+
+<a href="index.html">Volver al Dashboard</a>
+
+<script>
+document.getElementById("formulario").addEventListener("submit", function(e) {
+
+    e.preventDefault();
+
+    const titulo = document.getElementById("titulo").value;
+    const precio = document.getElementById("precio").value;
+
+    fetch("https://dummyjson.com/products/add", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+            title: titulo,
+            price: precio
+        })
+    })
+    .then(res => res.json())
+    .then(data => {
+        alert("Producto creado correctamente");
+        window.location.href = "index.html";
+    });
+});
+</script>
+
+</body>
+</html>

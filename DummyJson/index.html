@@ -2,30 +2,47 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>DummyJSON Productos</title>
+    <title>ShopMaster - Dashboard</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-    <header class="barra-busqueda">
-        <div class="titulo">
-            <h1>Abarrotes el river special</h1>
-        </div>
+<header class="barra-superior">
+    <h1>Panel de Administración - ShopMaster</h1>
 
-        <div class="buscador">
-            <input type="text" id="buscador" placeholder="Buscar producto...">
-        </div>
-    </header>
+    <div class="controles">
+        <input type="text" id="buscador" placeholder="Buscar producto...">
 
-    <main class="contenedor-productos" id="contenedor-productos"></main>
+        <select id="categorias">
+            <option value="">Todas las categorías</option>
+        </select>
 
-    <div class="modal" id="modal">
-        <div class="modal-contenido">
-            <span class="cerrar" id="cerrar">&times;</span>
-            <div id="detalle-producto"></div>
-        </div>
+        <a href="nuevo-producto.html" class="btn-nuevo">Nuevo Producto</a>
     </div>
+</header>
 
-    <script src="main.js"></script>
+<main>
+    <table class="tabla-productos">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Foto</th>
+                <th>Título</th>
+                <th>Precio</th>
+                <th>Categoría</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody id="tabla-body"></tbody>
+    </table>
+</main>
+
+<footer class="paginacion">
+    <button id="anterior">Anterior</button>
+    <span id="pagina-info">Página 1</span>
+    <button id="siguiente">Siguiente</button>
+</footer>
+
+<script src="main.js"></script>
 </body>
 </html>
